@@ -33,12 +33,13 @@ public class _6 {
     }
 
     public static String convert(String s, int numRows) {
-        if(numRows == 1){
+        if (numRows == 1) {
             return s;
         }
         int length = s.length();
         String a[][] = new String[numRows][length];
-        M:for (int i = 0, j = 0, k = 0; i < length; ) {
+        M:
+        for (int i = 0, j = 0, k = 0; i < length; ) {
             for (int l = 0; l < numRows; l++) {
                 if (i >= length) {
                     break M;
@@ -47,7 +48,7 @@ public class _6 {
                 j++;
                 i++;
             }
-            j-=2;
+            j -= 2;
             k++;
             for (int l = 0; l < numRows - 2; l++) {
                 if (i >= length) {

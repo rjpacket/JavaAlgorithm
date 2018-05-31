@@ -15,7 +15,7 @@ package com.company._386;
  */
 public class _556 {
     public static void main(String[] args) {
-        System.out.println(nextGreaterElement(230241));
+        System.out.println(nextGreaterElement(12443322));
     }
 
     public static int nextGreaterElement(int n) {
@@ -25,22 +25,40 @@ public class _556 {
             return -1;
         }
         String[] split = s.split("");
+        M:
         for (int k = 0; k < length - 1; k++) {
-            for (int i = length - 2, j = length - 1; i >= length - 2 - k; i--, j--) {
-                String temp = split[i];
-                split[i] = split[j];
-                split[j] = temp;
-                StringBuilder ret = new StringBuilder();
-                for (String s1 : split) {
-                    ret.append(s1);
-                }
-                long i1 = Long.parseLong(ret.toString());
-                if (i1 > n && i1 < Math.pow(2, 31)) {
-                    return (int) i1;
+            for (int i = length - 2, j = length - 1; i >= 0; j--, i = j - 1) {
+                if (Integer.parseInt(split[i]) < Integer.parseInt(split[j])) {
+                    for (int l = j; l < length; l++) {
+                        for (int m = l + 1; m < length; m++) {
+                            if (Integer.parseInt(split[l]) > Integer.parseInt(split[m])) {
+                                String temp = split[l];
+                                split[l] = split[m];
+                                split[m] = temp;
+                            }
+                        }
+                    }
+                    for (int l = j; l < length; l++) {
+                        if (Integer.parseInt(split[i]) < Integer.parseInt(split[l])) {
+                            String temp = split[i];
+                            split[i] = split[l];
+                            split[l] = temp;
+                            break M;
+                        }
+                    }
+                } else {
+                    continue;
                 }
             }
         }
-
+        StringBuilder ret = new StringBuilder();
+        for (String s1 : split) {
+            ret.append(s1);
+        }
+        long i1 = Long.parseLong(ret.toString());
+        if (i1 > n && i1 < Math.pow(2, 31)) {
+            return (int) i1;
+        }
         return -1;
     }
 }
