@@ -1,4 +1,4 @@
-package com.company._386;
+package com.company.leetcode;
 
 /**
  * Created by An on 2018/4/20.

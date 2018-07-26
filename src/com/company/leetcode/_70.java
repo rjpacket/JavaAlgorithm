@@ -1,4 +1,4 @@
-package com.company._386;
+package com.company.leetcode;
 
 /**
  * 假设你正在爬楼梯。需要 n 步你才能到达楼顶。

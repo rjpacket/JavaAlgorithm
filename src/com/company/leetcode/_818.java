@@ -1,4 +1,4 @@
-package com.company._386;
+package com.company.leetcode;
 
 /**
  * 你的赛车起始停留在位置 0，速度为 +1，正行驶在一个无限长的数轴上。（车也可以向负数方向行驶。）

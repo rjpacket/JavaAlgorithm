@@ -1,4 +1,4 @@
-package com.company._386;
+package com.company.leetcode;
 
 /**
  * 将字符串 "PAYPALISHIRING" 以Z字形排列成给定的行数：
