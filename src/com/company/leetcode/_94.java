@@ -1,5 +1,7 @@
 package com.company.leetcode;
 
+import com.company.bean.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,16 +23,6 @@ import java.util.List;
  * Created by An on 2018/4/23.
  */
 public class _94 {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
