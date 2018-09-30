@@ -1,5 +1,7 @@
 package com.company.leetcode;
 
+import com.company.bean.ListNode;
+
 /**
  * 给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
  * <p>
@@ -13,14 +15,6 @@ package com.company.leetcode;
  * 输出: 1->2->3
  */
 public class _83 {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);

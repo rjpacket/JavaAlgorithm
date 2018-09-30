@@ -1,5 +1,7 @@
 package com.company.leetcode;
 
+import com.company.bean.ListNode;
+
 /**
  * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
  * <p>
@@ -13,14 +15,6 @@ package com.company.leetcode;
  * Created by An on 2018/4/23.
  */
 public class _92 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
 

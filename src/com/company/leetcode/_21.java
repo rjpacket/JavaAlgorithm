@@ -1,5 +1,7 @@
 package com.company.leetcode;
 
+import com.company.bean.ListNode;
+
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  * <p>
@@ -9,14 +11,6 @@ package com.company.leetcode;
  * 输出：1->1->2->3->4->4
  */
 public class _21 {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         ListNode l10 = new ListNode(-9);
