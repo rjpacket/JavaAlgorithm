@@ -6,11 +6,22 @@ package com.company.sort;
  */
 public class FastSort {
     public static void main(String[] args) {
-        int[] arr = new int[]{4, 1, 7, 6, 9, 2, 8, 0, 3, 5};
+        int[] arr = new int[]{4, 11, 7, 6, 9, 2, 8, 12, 3, 5};
         quickSort(arr, 0, arr.length - 1);
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 
-    public static int partSort(int[] arr, int left, int right) {
+    /**
+     * 左右分区的交换写法
+     * @param arr
+     * @param left
+     * @param right
+     * @return
+     */
+    public static int partSort1(int[] arr, int left, int right) {
         int key = arr[right];
         int keyIndex = right;
         while (left < right) {
@@ -41,6 +52,32 @@ public class FastSort {
         int index = partSort(arr, left, right);
         quickSort(arr, left, index - 1);
         quickSort(arr, index + 1, right);
+    }
+
+    /**
+     * 左右分区的遍历写法
+     * @param arr
+     * @param left
+     * @param right
+     * @return
+     */
+    public static int partSort(int[] arr, int left, int right) {
+        int key = arr[right];
+        int i = left;
+        for (int j = left; j < right; j++) {
+            if(arr[j] < key){
+                swap(arr, j , i);
+                i++;
+            }
+        }
+        swap(arr, i, right);
+        return i;
+    }
+
+    private static void swap(int[] arr, int j, int i) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public static void fastSort(int[] arr, int left, int right) {

@@ -22,15 +22,15 @@ import java.util.List;
 public class _234 {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(-129);
-        ListNode n2 = new ListNode(-129);
-//        ListNode n3 = new ListNode(4);
-//        ListNode n4 = new ListNode(4);
-//        ListNode n5 = new ListNode(1);
+        ListNode n2 = new ListNode(4);
+        ListNode n3 = new ListNode(-129);
+        ListNode n4 = new ListNode(4);
+        ListNode n5 = new ListNode(-129);
         n1.next = n2;
-//        n2.next = n3;
-//        n3.next = n4;
-//        n4.next = n5;
-        System.out.println(isPalindrome(n1));
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        System.out.println(isPalindromee(n1));
     }
 
     public static boolean isPalindrome(ListNode head) {
@@ -45,6 +45,34 @@ public class _234 {
                 return false;
             }
         }
+        return true;
+    }
+
+    public static boolean isPalindromee(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        ListNode pre = null;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;  //快指针
+            slow = slow.next;   //慢指针
+
+            head.next = pre;    //反转前半部分
+            pre = head;
+            head = slow;
+        }
+
+        if(fast != null){   //如果字符串长度奇数，跳过正中间
+            slow = slow.next;
+        }
+
+        while (slow != null && pre != null) {   //循环判断前后单链表
+            if (slow.val != pre.val) {
+                return false;
+            }
+            slow = slow.next;
+            pre = pre.next;
+        }
+
         return true;
     }
 }

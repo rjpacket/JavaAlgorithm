@@ -2,7 +2,7 @@ package com.company.sort;
 
 public class DeleteGetMaxResult {
     public static void main(String[] args) {
-        System.out.println("最大结果" + getMaxResult1(new int[]{1, 5, 3, 8}));
+        System.out.println("最大结果" + getMaxResult1(new int[]{3,1,5,8,2,10,9, 1, 6, 2,2,2}));
     }
 
     public static int getMaxResult(int[] array) {
@@ -96,6 +96,11 @@ public class DeleteGetMaxResult {
                     resultArray[i] = resultArray[i + 1];
                 }
             }
+
+            for (int i = 0; i < length - 1; i++) {
+                System.out.print(resultArray[i] + " ");
+            }
+            System.out.println("  和" + sum);
 
             length--;
         }

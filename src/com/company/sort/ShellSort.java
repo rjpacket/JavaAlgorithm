@@ -13,21 +13,22 @@ public class ShellSort {
         }
     }
 
-    public static void shellSort(int[] data) {
-        int j = 0;
-        int temp = 0;
-        for (int increment = data.length / 2; increment > 0; increment /= 2) {
-            for (int i = increment; i < data.length; i++) {
-                temp = data[i];
-                for (j = i - increment; j >= 0; j -= increment) {
-                    if (data[j] > temp) {
-                        data[j + increment] = data[j];
-                    } else {
-                        break;
-                    }
+    public static void shellSort(int[] arr) {
+        int length = arr.length;
+        for (int gap = length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < length; i++) {
+                int j = i;
+                while (j - gap > 0 && arr[j] < arr[j - gap]) {
+                    swap(arr, j, j - gap);
+                    j -= gap;
                 }
-                data[j + increment] = temp;
             }
         }
+    }
+
+    private static void swap(int[] arr, int j, int i) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
