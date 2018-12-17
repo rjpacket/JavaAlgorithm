@@ -1,5 +1,7 @@
 package com.company.sort;
 
+import com.company.bean.ListNode;
+
 /**
  * 快速排序
  * Created by An on 2018/4/26.
@@ -9,9 +11,31 @@ public class FastSort {
         int[] arr = new int[]{4, 11, 7, 6, 9, 2, 8, 12, 3, 5};
         quickSort(arr, 0, arr.length - 1);
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.println(arr[i]);
+//        }
+
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        ListNode reverse = reverse(null, node1);
+        while (reverse != null){
+            System.out.println(reverse.val);
+            reverse = reverse.next;
         }
+    }
+
+    public static ListNode reverse(ListNode preNode, ListNode head){
+        if(head == null){
+            return preNode;
+        }
+        ListNode newHead = head.next;
+        head.next = preNode;
+        return reverse(head, newHead);
     }
 
     /**
