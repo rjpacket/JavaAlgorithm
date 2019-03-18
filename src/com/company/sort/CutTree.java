@@ -2,7 +2,7 @@ package com.company.sort;
 
 public class CutTree {
     public static void main(String[] args) {
-        System.out.println(cutTree(new int[]{3,4,5,4}));
+        System.out.println(cutTree(new int[]{3,4,5,6}));
     }
 
     public static int cutTree(int[] array){
