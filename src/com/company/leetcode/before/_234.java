@@ -36,7 +36,7 @@ public class _234 {
     public static boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
         while (head != null) {
-            list.add(head.val);
+            list.add(head.value);
             head = head.next;
         }
         int size = list.size() / 2;
@@ -66,7 +66,7 @@ public class _234 {
         }
 
         while (slow != null && pre != null) {   //循环判断前后单链表
-            if (slow.val != pre.val) {
+            if (slow.value != pre.value) {
                 return false;
             }
             slow = slow.next;

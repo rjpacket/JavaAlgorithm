@@ -24,7 +24,7 @@ public class FastSort {
         node3.next = node4;
         ListNode reverse = reverse(null, node1);
         while (reverse != null){
-            System.out.println(reverse.val);
+            System.out.println(reverse.value);
             reverse = reverse.next;
         }
     }

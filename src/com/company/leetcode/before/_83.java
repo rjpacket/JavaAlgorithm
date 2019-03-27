@@ -28,7 +28,7 @@ public class _83 {
         l4.next = l5;
         ListNode listNode = deleteDuplicates(l1);
         while (listNode != null) {
-            System.out.println(listNode.val);
+            System.out.println(listNode.value);
             listNode = listNode.next;
         }
     }
@@ -36,7 +36,7 @@ public class _83 {
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode result = head;
         while (head != null && head.next != null) {
-            if (head.val == head.next.val) {
+            if (head.value == head.next.value) {
                 head.next = head.next.next;
             } else {
                 head = head.next;

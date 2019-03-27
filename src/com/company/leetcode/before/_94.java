@@ -49,12 +49,12 @@ public class _94 {
             } else {
                 root = rootNodes.removeLast();
                 root.left = null;
-                list.add(root.val);
+                list.add(root.value);
             }
             if (root.right != null) {
                 root = root.right;
                 if (root.left == null && root.right == null) {
-                    list.add(root.val);
+                    list.add(root.value);
                 } else {
                     rootNodes.add(root);
                 }

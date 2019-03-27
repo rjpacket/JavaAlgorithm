@@ -41,9 +41,9 @@ public class _437 {
         if (root == null) {
             return 0;
         }
-        if (root.val == sum) {
+        if (root.value == sum) {
             return 1;
         }
-        return pathRemainSum(root.left, sum - root.val) + pathRemainSum(root.right, sum - root.val);
+        return pathRemainSum(root.left, sum - root.value) + pathRemainSum(root.right, sum - root.value);
     }
 }

@@ -27,10 +27,10 @@ public class _21 {
 
         ListNode listNode = mergeTwoLists(l10, l20);
         while (listNode.next != null) {
-            System.out.println(listNode.val);
+            System.out.println(listNode.value);
             listNode = listNode.next;
         }
-        System.out.println(listNode.val);
+        System.out.println(listNode.value);
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -43,13 +43,13 @@ public class _21 {
 
         ListNode left = l1;
         ListNode right = l2;
-        if (l1.val > l2.val) {
+        if (l1.value > l2.value) {
             left = l2;
             right = l1;
         }
 
         while (right != null) {
-            while (left.val < right.val && left.next != null && left.next.val < right.val) {
+            while (left.value < right.value && left.next != null && left.next.value < right.value) {
                 left = left.next;
             }
             ListNode temp = right.next;
@@ -58,7 +58,7 @@ public class _21 {
             left = right;
             right = temp;
         }
-        if (l1.val > l2.val) {
+        if (l1.value > l2.value) {
             return l2;
         }
         return l1;

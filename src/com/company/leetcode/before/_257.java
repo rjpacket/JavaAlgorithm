@@ -21,10 +21,10 @@ public class _257 {
             return;
         }
         if(root.left == null && root.right == null){
-            s += root.val;
+            s += root.value;
             result.add(s);
         }else{
-            s += root.val + "->";
+            s += root.value + "->";
         }
         if(root.left != null){
             find(root.left, result, s);

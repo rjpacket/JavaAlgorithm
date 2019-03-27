@@ -25,7 +25,7 @@ public class _206 {
         n4.next = n5;
         ListNode listNode = reverseList(n1);
         while (listNode != null) {
-            System.out.println(listNode.val);
+            System.out.println(listNode.value);
             listNode = listNode.next;
         }
     }
