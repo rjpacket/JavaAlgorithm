@@ -4,10 +4,10 @@ import com.company.bean.TreeNode;
 
 /**
  * 重建二叉树
- *
+ * <p>
  * 前序 1,2,4,7,3,5,6,8
  * 中序 4,7,2,1,5,3,8,6
- *
+ * <p>
  * 1. 头节点就是前序的第一个值，所以 root = 1
  * 2. 然后在中序中找到这个 root 的下标 i ，i左边都是左子树中序{4,7,2}，i右边都是右子树中序{5,3,8,6}
  * 3. 再回到前序数组查看左子树的前序{2,4,7}，右子树的前序{3,5,6,8}
@@ -30,15 +30,15 @@ public class RebuildTree {
     }
 
     public static void main(String[] args) {
-        int[] pre = {1,2,4,7,3,5,6,8};
-        int[] in = {4,7,2,1,5,3,8,6};
+        int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
         RebuildTree rebuildTree = new RebuildTree();
         TreeNode treeNode = rebuildTree.rebuildTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
         printNode(treeNode);
     }
 
-    public static void printNode(TreeNode treeNode){
-        if(treeNode == null){
+    public static void printNode(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
         printNode(treeNode.left);

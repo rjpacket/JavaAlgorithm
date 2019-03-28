@@ -2,9 +2,9 @@ package com.company.swordOffer.sword00007;
 
 /**
  * 旋转正序数组的最小元素
- *
+ * <p>
  * {4,5,1,2,3}
- *
+ * <p>
  * 正序数组，旋转之后，左边肯定比右边大，然后取中间值，
  * 1. 如果mid比左边大，所以mid落在左边上升区，最小值应该在mid右边，所以让left=mid，缩小一半的查找范围；
  * 2. 如果mid比左边小，所以mid落在右边上升区，最小值应该在mid左边，所以让right=mid，缩小一半的查找范围；
@@ -24,9 +24,9 @@ public class RotateArrayMinElement {
                 return array[right];
             }
             mid = (left + right) / 2;
-            if(array[mid] == array[left] && array[mid] == array[right]){
+            if (array[mid] == array[left] && array[mid] == array[right]) {
                 return minElementInArray(array);
-            }else {
+            } else {
                 if (array[mid] >= array[left]) {
                     left = mid;
                 } else if (array[mid] <= array[right]) {
@@ -40,7 +40,7 @@ public class RotateArrayMinElement {
     private int minElementInArray(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
-            if(array[i] < min){
+            if (array[i] < min) {
                 min = array[i];
             }
         }

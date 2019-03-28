@@ -2,20 +2,19 @@ package com.company.swordOffer.sword00010;
 
 /**
  * 数值的整数次方
- *
+ * <p>
  * 没什么好说的，正常操作
- *
  */
 public class Power {
 
     public double power(double base, int exponent) throws Exception {
-        if(equal(base, 0) && exponent < 0){
+        if (equal(base, 0) && exponent < 0) {
             throw new Exception("0的负指数没有意义");
         }
-        if(exponent == 0) return 1.0;
-        if(exponent < 0){
+        if (exponent == 0) return 1.0;
+        if (exponent < 0) {
             return 1.0 / powerChild(base, -exponent);
-        }else{
+        } else {
             return powerChild(base, exponent);
         }
     }
@@ -28,19 +27,19 @@ public class Power {
         return result;
     }
 
-    public boolean equal(double left, double right){
-        if(Math.abs(left - right) < 0.00000001){
+    public boolean equal(double left, double right) {
+        if (Math.abs(left - right) < 0.00000001) {
             return true;
         }
         return false;
     }
 
     public static void main(String[] args) {
-        try{
+        try {
             Power power = new Power();
             System.out.println(power.power(2, -5));
             System.out.println(power.power(0, 0));
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
