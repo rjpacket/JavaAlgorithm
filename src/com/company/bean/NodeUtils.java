@@ -9,6 +9,14 @@ public class NodeUtils {
         }
     }
 
+    public static void printTree(TreeNode root) {
+        if(root != null) {
+            System.out.println(root.value);
+            printTree(root.left);
+            printTree(root.right);
+        }
+    }
+
     public static ListNode buildNodes(int[] array) {
         int length = array.length;
         ListNode head = new ListNode(array[0]);
@@ -18,11 +26,5 @@ public class NodeUtils {
             head = head.next;
         }
         return temp;
-    }
-
-    public static TreeNode buildTree(int[] array){
-        int length = array.length;
-        TreeNode root = new TreeNode(array[0]);
-        return root;
     }
 }
