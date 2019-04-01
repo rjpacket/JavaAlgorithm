@@ -27,4 +27,13 @@ public class NodeUtils {
         }
         return temp;
     }
+
+    public static int getDeep(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int ld = getDeep(root.left);
+        int rd = getDeep(root.right);
+        return ld > rd ? (ld + 1) : (rd + 1);
+    }
 }
